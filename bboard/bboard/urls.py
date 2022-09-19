@@ -21,8 +21,9 @@ from django.views.static import serve
 from django.conf.urls.static import static
 
 urlpatterns = [
-   path('admin/', admin.site.urls),
    path('social-auth/', include('social_django.urls', namespace="social")),
+   path('admin/', admin.site.urls),
+   path('captcha', include('captcha.urls')),
    path('', include('main.urls', namespace='')),
 ]
 
